@@ -1,6 +1,8 @@
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Bell, Bot, Search } from "lucide-react";
+import Logo from "@/assets/logo/DuniaLogo.png"
+import Image from "next/image";
 
 function Header() {
     return (
@@ -47,14 +49,15 @@ function Header() {
 function ShopifyMark() {
     return (
         <div className="flex items-center gap-1.5">
-            <svg
+            {/* <svg
                 viewBox="0 0 24 24"
                 className="h-6 w-6 text-white"
                 fill="currentColor"
             >
                 <path d="M15.8 3.6c-.1-.1-.3-.1-.4-.1-.1 0-1 .3-1 .3s-.7-.7-.8-.8c-.1-.1-.2-.1-.4-.1-.2.1-.6.2-1.1.4C11.6 2.7 11 2.5 10.6 2.5c-1 0-2 .7-2.6 2.6-.4 1.3-.6 2.6-.7 3.3l-1.9.6c-.6.2-.6.2-.6.7C4.7 10.3 3.5 19 3.5 19l10.6 2 5.9-1.3s-4-15.7-4.1-15.9c0-.1-.1-.2-.1-.2M13.5 5c0 .1-1.5.5-1.5.5.3-1.1.8-1.6 1.3-1.9.1.4.2.9.2 1.4M11.7 3.4c.1 0 .3.1.4.1-.5.3-1.1.8-1.4 1.9l-1.2.4c.3-1.4 1.1-2.3 2.2-2.4M10.5 3.6c.2 0 .4 0 .5.1-.9.4-1.9 1.4-2.3 3.2l-1.1.3c.4-1.9 1.5-3.4 2.9-3.6" />
             </svg>
-            <span className="font-semibold text-white">shopify</span>
+            <span className="font-semibold text-white">shopify</span> */}
+            <Image src={Logo} width={200} alt="Dunia Logo" />
         </div>
     );
 }
