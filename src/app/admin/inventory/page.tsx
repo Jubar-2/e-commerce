@@ -1,18 +1,19 @@
 "use client";
 
-import * as React from "react";
+import { useMemo, useState } from "react";
+import { AdminFooterLink } from "@/components/common";
 import { useTableSelection } from "@/hooks/use-table-selection";
 import { INITIAL_INVENTORY_ITEMS } from "./_data/mock-inventory";
 import { InventoryHeader, InventoryTable } from "./_components";
 import type { InventoryItem } from "./_types";
 
 export default function InventoryPage() {
-  const [items, setItems] = React.useState<InventoryItem[]>(
+  const [items, setItems] = useState<InventoryItem[]>(
     INITIAL_INVENTORY_ITEMS
   );
-  const [searchValue, setSearchValue] = React.useState("");
+  const [searchValue, setSearchValue] = useState("");
 
-  const filteredItems = React.useMemo(() => {
+  const filteredItems = useMemo(() => {
     if (!searchValue.trim()) return items;
     const q = searchValue.toLowerCase();
     return items.filter(
@@ -57,11 +58,10 @@ export default function InventoryPage() {
         onUpdateAvailable={handleUpdateAvailable}
       />
 
-      <div className="mt-6 text-center text-sm text-neutral-500">
-        <a href="#" className="hover:underline">
-          Learn more about managing inventory
-        </a>
-      </div>
+      <AdminFooterLink
+        href="#"
+        label="Learn more about managing inventory"
+      />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 export interface FormFieldProps {
   label?: React.ReactNode;
   htmlFor?: string;
+  id?: string;
   required?: boolean;
   helpText?: React.ReactNode;
   error?: React.ReactNode;
@@ -15,6 +16,7 @@ export interface FormFieldProps {
 export function FormField({
   label,
   htmlFor,
+  id,
   required,
   helpText,
   error,
@@ -22,12 +24,14 @@ export function FormField({
   className,
   children,
 }: FormFieldProps) {
+  const targetId = htmlFor || id;
+
   return (
     <div className={cn("w-full", className)}>
       {label && (
         <div className="mb-1.5 flex items-center justify-between gap-2">
           <label
-            htmlFor={htmlFor}
+            htmlFor={targetId}
             className="block text-sm font-medium text-neutral-800"
           >
             {label}

@@ -1,8 +1,11 @@
 export interface Collection {
+  id?: string;
   title: string;
   products: number;
   conditions: string;
   swatch: string;
+  status?: "Active" | "Draft" | "Archived";
+  updatedAt?: string;
 }
 
 export interface CollectionHeaderProps {
@@ -16,12 +19,14 @@ export interface CollectionTableFilterProps {
   onSearchChange?: (value: string) => void;
   onFilterClick?: () => void;
   onColumnsClick?: () => void;
+  rightSlot?: React.ReactNode;
 }
 
 export interface CollectionTableHeaderProps {
   allChecked: boolean;
   someChecked: boolean;
   onToggleAll: () => void;
+  showColumn?: (key: string) => boolean;
 }
 
 export interface CollectionTableRowProps {
@@ -29,6 +34,7 @@ export interface CollectionTableRowProps {
   index: number;
   isChecked: boolean;
   onToggle: (index: number) => void;
+  showColumn?: (key: string) => boolean;
 }
 
 export interface CollectionTableProps {
@@ -38,6 +44,7 @@ export interface CollectionTableProps {
   someChecked: boolean;
   onToggleAll: () => void;
   onToggleOne: (index: number) => void;
+  showColumn?: (key: string) => boolean;
 }
 
 export interface UseCollectionSelectionReturn {

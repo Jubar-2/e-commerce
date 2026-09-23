@@ -39,11 +39,11 @@ export function AdminPageHeader({
       <div className="flex items-center gap-2">
         {Icon && <Icon className="h-5 w-5 text-neutral-700 shrink-0" />}
         <div>
-          <h1 className="text-2xl font-semibold text-neutral-900 tracking-tight">
+          <h1 className="text-[18px] font-semibold text-[#303030] tracking-tight">
             {title}
           </h1>
           {subtitle && (
-            <p className="text-xs text-neutral-500 mt-0.5">{subtitle}</p>
+            <p className="text-[13px] text-[#616161] mt-0.5">{subtitle}</p>
           )}
         </div>
       </div>

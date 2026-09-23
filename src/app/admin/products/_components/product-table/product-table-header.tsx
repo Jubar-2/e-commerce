@@ -23,7 +23,7 @@ export function ProductTableHeader({
 
   return (
     <thead>
-      <tr className="border-b border-neutral-200 text-xs font-medium text-neutral-500">
+      <tr className="border-b border-neutral-200 text-xs font-medium text-neutral-500 bg-bg-admin">
         <th className="w-10 py-2.5 pl-4">
           <input
             ref={checkboxRef}

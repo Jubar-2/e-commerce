@@ -10,25 +10,30 @@ export function CollectionTable({
   someChecked,
   onToggleAll,
   onToggleOne,
+  showColumn = () => true,
 }: CollectionTableProps) {
   return (
-    <table className="w-full border-collapse text-left">
-      <CollectionTableHeader
-        allChecked={allChecked}
-        someChecked={someChecked}
-        onToggleAll={onToggleAll}
-      />
-      <tbody>
-        {collections.map((collection, index) => (
-          <CollectionTableRow
-            key={collection.title}
-            collection={collection}
-            index={index}
-            isChecked={!!checked[index]}
-            onToggle={onToggleOne}
-          />
-        ))}
-      </tbody>
-    </table>
+    <div className="overflow-x-auto">
+      <table className="w-full border-collapse text-left">
+        <CollectionTableHeader
+          allChecked={allChecked}
+          someChecked={someChecked}
+          onToggleAll={onToggleAll}
+          showColumn={showColumn}
+        />
+        <tbody>
+          {collections.map((collection, index) => (
+            <CollectionTableRow
+              key={collection.title}
+              collection={collection}
+              index={index}
+              isChecked={!!checked[index]}
+              onToggle={onToggleOne}
+              showColumn={showColumn}
+            />
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }

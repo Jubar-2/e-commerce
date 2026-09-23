@@ -7,6 +7,7 @@ export function CollectionTableFilter({
   onSearchChange,
   onFilterClick,
   onColumnsClick,
+  rightSlot,
 }: CollectionTableFilterProps) {
   return (
     <TableSearchFilter
@@ -14,7 +15,8 @@ export function CollectionTableFilter({
       onSearchChange={onSearchChange}
       onViewClick={onFilterClick}
       onColumnsClick={onColumnsClick}
-      showColumnsButton={true}
+      showColumnsButton={!rightSlot}
+      rightSlot={rightSlot}
     />
   );
 }
